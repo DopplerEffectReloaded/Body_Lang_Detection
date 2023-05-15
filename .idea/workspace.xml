@@ -6,8 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="3bd0c271-988a-4d56-bfeb-8c243692e23e" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/motion_detector/classifying_model/data.py" beforeDir="false" afterPath="$PROJECT_DIR$/motion_detector/classifying_model/data.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/motion_detector/classifying_model/movenet.py" beforeDir="false" afterPath="$PROJECT_DIR$/motion_detector/classifying_model/movenet.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/motion_detector/classifying_model/preprocessing.py" beforeDir="false" afterPath="$PROJECT_DIR$/motion_detector/classifying_model/preprocessing.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,7 +28,7 @@
   "keyToString": {
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "main",
-    "last_opened_file_path": "C:/Users/SACHIN/motion_training"
+    "last_opened_file_path": "C:/Users/SACHIN/Body_Lang_Detection"
   }
 }]]></component>
   <component name="RecentsManager">
