@@ -20,7 +20,7 @@ if "movenet_thunder.tflite" not in os.listdir():
 movenet = Movenet("movenet_thunder")
 
 
-def detect(input_tensor, inference_count = 2):
+def detect(input_tensor, inference_count=2):
     """
     This function runs the detection algorithm on the input image.
 
@@ -37,7 +37,7 @@ def detect(input_tensor, inference_count = 2):
 
     # Detecting poses input image
 
-    movenet.detect(input_tensor.numpy(), reset_crop_region=False) # Set to false since trained on static images
+    movenet.detect(input_tensor.numpy(), reset_crop_region=False)  # Set to false since trained on static images
 
     # Uses prev result to find ROI and increase accuracy
 
@@ -45,3 +45,17 @@ def detect(input_tensor, inference_count = 2):
         detect_person = movenet.detect(input_tensor.numpy(), reset_crop_region=False)
 
     return detect_person
+
+
+class PreProcessor:
+
+    def __init__(self, images_in_dir, csv_out_path):
+        self._images_in_dir = images_in_dir
+        self._csv_out_path = csv_out_path
+        self._csv_out_folder_per_pose = "csv_for_each_pose"
+        self._message = []
+
+        if self._csv_out_folder_per_pose not in os.listdir():
+            os.makedirs(self._csv_out_folder_per_pose)
+
+        self._pose_names = sorted([i for i in os.listdir(images_in_dir)])
