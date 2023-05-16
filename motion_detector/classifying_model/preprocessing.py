@@ -116,4 +116,48 @@ class PreProcessor:
         all_coordinates_df.to_csv(self.csv_out_path, index=False)
 
     def all_coordinates_as_dataframe(self):
-        pass
+        df_return = None
+
+        for index, name in enumerate(self.pose_names):
+            output_path = os.path.join(self.csv_out_folder_per_pose, name + ".csv")
+
+            df = pd.read_csv(output_path, header=None)
+
+            # Creating labels
+            df["class_no"] = [index] * len(df)
+            df["class_name"] = [name] * len(df)
+
+            df[df.columns[0]] = name + '/' + df[df.df.columns[0]]
+
+            if df_return is None:
+                df_return = df
+            else:
+                df_return = pd.concat([df_return, df], axis=0)
+
+            bodypoint_list_name = [[bodypart.name + "_x", bodypart.name + "_y" + bodypart.name + "_score"]
+                                   for bodypart in BodyPart]
+
+            titles = []
+
+            for cols in bodypoint_list_name:
+                titles += cols
+
+            titles = ["filename"] + titles
+            titles_map = {df_return.columns[i]: titles[i] for i in range(len(titles))}
+
+            df_return.rename(titles_map, axis=1, inplace=True)
+
+            return df_return
+
+
+images_path = os.path.join("poses", "train")
+csv_output_path = "train_data.csv"
+
+training_processor = PreProcessor(images_path, csv_output_path)
+training_processor.process()
+
+images_path = os.path.join('yoga_poses', 'test')
+csv_output_path = 'test_data.csv'
+test_preprocessor = PreProcessor(images_path, csv_output_path)
+
+test_preprocessor.process()
