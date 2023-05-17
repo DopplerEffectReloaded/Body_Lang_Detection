@@ -124,8 +124,8 @@ class PreProcessor:
             df = pd.read_csv(output_path, header=None)
 
             # Creating labels
-            df["class_no"] = [index] * len(df)
-            df["class_name"] = [name] * len(df)
+            df["pose_no"] = [index] * len(df)
+            df["pose_name"] = [name] * len(df)
 
             df[df.columns[0]] = name + '/' + df[df.df.columns[0]]
 
