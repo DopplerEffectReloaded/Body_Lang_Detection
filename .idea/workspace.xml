@@ -6,7 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="3bd0c271-988a-4d56-bfeb-8c243692e23e" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/motion_detector/classifying_model/preprocessing.py" beforeDir="false" afterPath="$PROJECT_DIR$/motion_detector/classifying_model/preprocessing.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/motion_detector/classifying_model/training.py" beforeDir="false" afterPath="$PROJECT_DIR$/motion_detector/classifying_model/training.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />

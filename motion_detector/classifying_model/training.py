@@ -27,7 +27,8 @@ def loadCSV(path):
 def get_size(keypoints, chest_multiplier=1.5):
     # Hips and shoulders centre
     centre_hips = (tf.gather(keypoints, BodyPart.LEFT_HIP, axis=1)+tf.gather(keypoints, BodyPart.RIGHT_HIP, axis=1))/2
-    centre_shoulder = (tf.gather(keypoints, BodyPart.LEFT_SHOULDER, axis=1)+tf.gather(keypoints, BodyPart.RIGHT_SHOULDER, axis=1))/2
+    centre_shoulder = (tf.gather(keypoints, BodyPart.LEFT_SHOULDER, axis=1) +
+                       tf.gather(keypoints, BodyPart.RIGHT_SHOULDER, axis=1))/2
 
     # get mid of chest to hips
     chest_mid = tf.linalg.norm(centre_shoulder-centre_hips)
@@ -55,7 +56,7 @@ def pose_keypoints(keypoints):
     size = get_size(keypoints_centred)
     keypoints_centred /= size
 
-    return  keypoints_centred
+    return keypoints_centred
 
 
 def embed_keypoints(keypoints_and_keypoint_scores):
