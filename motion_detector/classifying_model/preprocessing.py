@@ -79,7 +79,7 @@ class PreProcessor:
 
                 image_names = np.array([i for i in os.listdir(pose_folder)])
                 count_valid = 0
-                for image in tqdm.tqdm(iterable=image_names, desc="\n---------PROCESSING FILES-----------\n"):
+                for image in tqdm.tqdm(iterable=image_names):
                     path = os.path.join(pose_folder, image)
 
                     try:
@@ -96,6 +96,8 @@ class PreProcessor:
                     person = detect(image)
 
                     min_score = min([keypoint.score for keypoint in person.keypoints])
+                    if pose_folder == "C:\\Users\\SACHIN\\Body_Lang_Detection\\motion_detector\\classifying_model\\poses\\train\\shoulder":
+                        min_detect_threshold = 0.05
                     image_pass = min_score > min_detect_threshold
                     if not image_pass:
                         self.message.append("Skipped" + path + "Pose not detected accurately")
@@ -106,7 +108,7 @@ class PreProcessor:
                     pose_keypoints = np.array([[keypoint.coordinate.x, keypoint.coordinate.y, keypoint.score]
                                                for keypoint in person.keypoints], dtype=np.float32)
 
-                    coordinates = pose_keypoints.flatten().astype(np.str).tolist()
+                    coordinates = pose_keypoints.flatten().astype(np.str_).tolist()
                     out_write.writerow([image] + coordinates)
 
         print(self.message)
@@ -126,7 +128,7 @@ class PreProcessor:
             df["pose_no"] = [index] * len(df)
             df["pose_name"] = [name] * len(df)
 
-            df[df.columns[0]] = name + '/' + df[df.df.columns[0]]
+            df[df.columns[0]] = name + '/' + df[df.columns[0]]
 
             if df_return is None:
                 df_return = df
@@ -152,10 +154,10 @@ class PreProcessor:
 images_path = os.path.join("poses", "train")
 csv_output_path = "train_data.csv"
 
-training_processor = PreProcessor(images_path, csv_output_path)
+training_processor = PreProcessor(images_in_dir=images_path, csv_out_path=csv_output_path)
 training_processor.processor()
 
-images_path = os.path.join('yoga_poses', 'test')
+images_path = os.path.join('poses', 'test')
 csv_output_path = 'test_data.csv'
 test_preprocessor = PreProcessor(images_path, csv_output_path)
 
