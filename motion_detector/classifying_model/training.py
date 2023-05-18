@@ -3,7 +3,6 @@ import tensorflow as tf
 import tensorflowjs as tfjs
 from keras import utils
 from keras import callbacks
-import csv
 import pandas as pd
 from data import *
 from sklearn.model_selection import train_test_split

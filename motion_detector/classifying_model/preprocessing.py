@@ -42,7 +42,7 @@ def detect(input_tensor, inference_count=2):
     # Uses prev result to find ROI and increase accuracy
 
     for _ in range(inference_count):
-        detect_person = movenet.detect(input_tensor.numpy(), reset_crop_region=False)
+        detect_person = movenet.detect(input_tensor.numpy(), reset_crop_region=True)
 
     return detect_person
 
