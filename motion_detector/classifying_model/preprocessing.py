@@ -58,9 +58,9 @@ class PreProcessor:
         if self.csv_out_folder_per_pose not in os.listdir():
             os.makedirs(self.csv_out_folder_per_pose)
 
-        self.pose_names = sorted([i for i in os.listdir(images_in_dir)])
+        self.pose_names = np.array(sorted([i for i in os.listdir(images_in_dir)]))
 
-    def process(self, min_detect_threshold=0.1):
+    def processor(self, min_detect_threshold=0.1):
         """
         Processes the images in the folder path specified.
 
@@ -77,10 +77,9 @@ class PreProcessor:
             with open(output_path, 'w') as output_file:
                 out_write = csv.writer(output_file, quoting=csv.QUOTE_MINIMAL)
 
-                image_names = sorted([i for i in os.listdir(pose_folder)])
+                image_names = np.array([i for i in os.listdir(pose_folder)])
                 count_valid = 0
-                for image in tqdm.tqdm(iterable=image_names, desc="\n-------PROCESSING FILES-----------\n",
-                                       total=len(image_names)):
+                for image in tqdm.tqdm(iterable=image_names, desc="\n---------PROCESSING FILES-----------\n"):
                     path = os.path.join(pose_folder, image)
 
                     try:
@@ -154,10 +153,10 @@ images_path = os.path.join("poses", "train")
 csv_output_path = "train_data.csv"
 
 training_processor = PreProcessor(images_path, csv_output_path)
-training_processor.process()
+training_processor.processor()
 
 images_path = os.path.join('yoga_poses', 'test')
 csv_output_path = 'test_data.csv'
 test_preprocessor = PreProcessor(images_path, csv_output_path)
 
-test_preprocessor.process()
+test_preprocessor.processor()
