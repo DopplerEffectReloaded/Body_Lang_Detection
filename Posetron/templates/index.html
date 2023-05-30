@@ -4,20 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" type ="text/css" href="{{ url_for('static', filename='styles.css') }}">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Kaushan+Script|Poppins&display=swap">
     <link rel = "stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://cdn.jsdelivr.net/gh/cferdinandi/smooth-scroll/dist/smooth-scroll.polyfills.min.js"></script>
     <title>Inclusifier Website</title>
 
 </head>
 <body>
 <!-- Home -->
 <section id="home">
-    <img src="../static/logo.png" class = "logo">
-    <div class="home-text">
+    <img src="../static/logo.png" className = "logo">
+    <div className="home-text">
         <h1>Inclusifier</h1>
         <p>Promoting inclusivity and diversity through PoseTron and Converserator</p>
-        <div class="home-button">
+        <div className="home-button">
             <a href="https://github.com/DopplerEffectReloaded/Posetron/blob/main/README.md" target="_blank"><span></span>Read More</a>
         </div>
     </div>
@@ -29,7 +30,8 @@
             <li><a href="#">Home</a></li>
             <li><a href="#features">Features</a></li>
             <li><a href="#products">Products</a></li>
-            <li><a href="#">Meet us</a></li>
+            <li><a href="#Meet-the-team">Meet us</a></li>
+            <li><a href="#footer">Contact Us</a></li>
         </ul>
     </nav>
 </div>
@@ -39,20 +41,20 @@
 
 <!-- Features -->
 <section id ="features">
-    <div class="features-title">
+    <div className="features-title">
         <p>FEATURES</p>
         <h1>Our Functionality</h1>
     </div>
     
-    <div class="all-features">
-        <div class="posetron">
+    <div className="all-features">
+        <div className="posetron">
             <h1>PoseTron:</h1>
             <h2>PoseTron algorithm</h2>
-            <div class="posetron-description">
-                <div class="posetron-icon">
-                    <i class="fa fa-cube"></i>
+            <div className="posetron-description">
+                <div className="posetron-icon">
+                    <i className="fa fa-cube"></i>
                 </div>
-                <div class="posetron-content">
+                <div className="posetron-content">
                     <p>
                         PoseTron feature concept is a implementation of the Posenet algorithm for detecting inappropriate 
                         poses in the workpace. 
@@ -60,11 +62,11 @@
                 </div>
             </div>
             <h2>PoseTron usage</h2>
-            <div class="posetron-description">
-                <div class="posetron-icon">
-                    <i class="fa fa-cube"></i>
+            <div className="posetron-description">
+                <div className="posetron-icon">
+                    <i className="fa fa-cube"></i>
                 </div>
-                <div class="posetron-content">
+                <div className="posetron-content">
                     <p>
                         We think it can be implemented along with CCTV cameras to track the body language of office workers 
                         and alert staff of misconduct.
@@ -72,11 +74,11 @@
                 </div>
             </div>
             <h2>PoseTron effectiveness</h2>
-            <div class="posetron-description">
-                <div class="posetron-icon">
-                    <i class="fa fa-cube"></i>
+            <div className="posetron-description">
+                <div className="posetron-icon">
+                    <i className="fa fa-cube"></i>
                 </div>
-                <div class="posetron-content">
+                <div className="posetron-content">
                     <p>
                         Since this model is trained on the Movenet algorithm by tensorflow, 
                         it can detect inappropriate static poses really well and raise an alarm
@@ -84,17 +86,17 @@
                 </div>
             </div>
         </div>
-        <div class="posetron-img">
+        <div className="posetron-img">
             <img src="../static/body.jpg">
         </div>
-        <div class="converserator">
+        <div className="converserator">
             <h1>Converserator:</h1>
             <h2>Converserator algorithm</h2>
-            <div class="converserator-description">
-                <div class="converserator-icon">
-                    <i class="fa fa-cube"></i>
+            <div className="converserator-description">
+                <div className="converserator-icon">
+                    <i className="fa fa-cube"></i>
                 </div>
-                <div class="converserator-content">
+                <div className="converserator-content">
                     <p>
                         Converserator is a employee training tool which makes use of Natural Language Processing
                         to effectively train employees. It uses the language layer API to process the textual language and the _ to convert speech to text.
@@ -102,11 +104,11 @@
                 </div>
             </div>
             <h2>Converserator Usage</h2>
-            <div class="converserator-description">
-                <div class="converserator-icon">
-                    <i class="fa fa-cube"></i>
+            <div className="converserator-description">
+                <div className="converserator-icon">
+                    <i className="fa fa-cube"></i>
                 </div>
-                <div class="converserator-content">
+                <div className="converserator-content">
                     <p>
                         It can be implemented as an employee training tool and help promote inclusivity by prompting the employee to 
                         speak in the language everyone understands if he speaks a language someone does not understand.
@@ -114,11 +116,11 @@
                 </div>
             </div>
             <h2>Converserator Effectiveness</h2>
-            <div class="converserator-description">
-                <div class="converserator-icon">
-                    <i class="fa fa-cube"></i>
+            <div className="converserator-description">
+                <div className="converserator-icon">
+                    <i className="fa fa-cube"></i>
                 </div>
-                <div class="converserator-content">
+                <div className="converserator-content">
                     <p>
                         This feature is still under development and testing. Since this feature uses Neural Networks for 
                         obtaining the language spoken by the user, slight errors can be seen. However, we believe it can be a powerful tool once development is finished.
@@ -126,7 +128,7 @@
                 </div>
             </div>
         </div>
-        <div class="converserator-img">
+        <div className="converserator-img">
             <img src="../static/chat.jpg">
         </div>
     </div>
@@ -135,35 +137,105 @@
 
 <!-- Products -->
 <section id="products">
-    <div class="products-title">
+    <div className="products-title">
         <p>PRODUCTS</p>
         <h1>Our Products</h1>
     </div>
-    <div class="all-products">
-        <div class="product-posetron">
-            <img src="../static/Posetron.jpg">
-            <div class="overlay"></div>
-            <div class="product-description">
+    <div className="all-products">
+        <div className="product-posetron">
+            <form method="POST" action="/display_posetron">
+                <button type="submit">
+                    <div className="overlay"></div>
+                    <img src="../static/Posetron.jpg">
+                
+            
+            <div className="overlay"></div>
+            <div className="product-description">
                 <h3>PoseTron</h3>
                 <hr>
                 <p>Click here to be directed to test Posetron.</p>
             </div>
+                </button>
+            </form>
         </div>
-        <div class="product-converserator">
-            <img src="../static/Converserator.jpg">
-            <div class="overlay"></div>
-            <div class="product-description">
+        <div className="product-converserator">
+            <form action="/display_converserator">
+                <button type="submit">
+                    <div className="overlay"></div>
+                    <img src="../static/Converserator.jpg">
+                
+            <div className="overlay"></div>
+            <div className="product-description">
                 <h3>Converserator</h3>
                 <hr>
                 <p>Click here to be directed to test Converserator.</p>
             </div>
+                </button>
+            </form>
         </div>
     </div>
 </section>
 
+<!-- Meet Us -->
+<section id="Meet-the-team">
+    <div className="features-title">
+        <p>Meet The Team</p>
+        <h1>Our Members</h1>
+    </div>
+    <div className="row">
+        <div className="column">
+            <div className="developer">
+                <img src="../static/developer.jpg">
+                <div className="developer-info">
+                    <h4>Aditya Dharap </h4>
+                    <small>@DopplerEffectReloaded<i className="fa fa-github"></i></small>
+                </div>
+            </div>
+            <p> I am a student of CHIREC International School and
+                the developer of this website. I want to use technology to solve social issues.
+                I have used the PoseNet algorithm for Posetron 
+                and am going to use Natural Language Processing for developing the Converserator.
+                I hope to pursue Computer Science in the future
+            </p>
+        </div>
+        <div className="column">
+            <div className="researcher">
+                <img src="../static/researcher.jpg">
+                <div className="researcher-info">
+                    <h4>Aamani Maddukuri</h4>
+                    <small>@aamani_30<i className="fa fa-instagram"></i></small>
+                </div>
+            </div>
+            <p> Hi! I am a 12th grader from Chirec International School. 
+                I am currently studying in the IB curriculum and am interested in using technology for problem-solving.
+                I hope to pursue computer science in the future.
+            </p>
+        </div>
+        </div>
+        
+</section>
 
+<!-- Footer -->
 
-<script src="../scripts/script.js"></script>
+<section id="footer">
+    <img src="../static/logo.png" className="footer-img">
+    <div className="features-title">
+        <p>CONTACT US</p>
+        <h1>Try the Concept out Today</h1>
+    </div>
+    <div className="footer-row">
+        <div className="footer-right">
+            <h1>Contact information</h1>
+            <p>adityadharap3@gmail.com<i className="fa fa-envelope"></i></p>
+            <p>aamanism@gmail.com<i className="fa fa-envelope"></i></p>
+        </div>
+    </div>
+    <div className="links">
+        <i className="fa fa-github"></i>
+        <i className="fa fa-instagram"></i>
+    </div>
+</section>
+<script type="text/javascript" src="{{url_for('static', filename='script.js')}}"></script>
 </body>
 </html>
 

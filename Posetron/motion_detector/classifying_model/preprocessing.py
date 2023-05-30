@@ -37,7 +37,7 @@ def detect(input_tensor, inference_count=2):
 
     # Detecting poses input image
 
-    movenet.detect(input_tensor.numpy(), reset_crop_region=False)  # Set to false since trained on static images
+    movenet.detect(input_tensor.numpy(), reset_crop_region=False)
 
     # Uses prev result to find ROI and increase accuracy
 

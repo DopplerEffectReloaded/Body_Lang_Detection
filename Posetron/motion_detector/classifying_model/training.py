@@ -24,7 +24,7 @@ def loadCSV(path):
     return df_use, pose_count_binary, pose_list
 
 
-def get_size(keypoints, chest_multiplier=1.5):
+def get_size(keypoints, chest_multiplier=2.5):
     # Hips and shoulders centre
     centre_hips = (tf.gather(keypoints, BodyPart.LEFT_HIP.value, axis=1) + tf.gather(keypoints, BodyPart.RIGHT_HIP.value,
                                                                                axis=1)) / 2
